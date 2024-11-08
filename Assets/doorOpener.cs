@@ -18,16 +18,7 @@ public class doorOpener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (true)
-        {
-            animator.SetBool("character_nearby", true);
-
-            Thread.Sleep(2000);
-
-            animator.SetBool("character_nearby", false);
-
-            Thread.Sleep(2000);
-        }
+        animator.SetBool("character_nearby", true);
         
     }
 }
