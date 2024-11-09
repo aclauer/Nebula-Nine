@@ -8019,7 +8019,7 @@ GameObject:
   - component: {fileID: 697893474}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24894,6 +24894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d05928a00d3473ab056bf016308e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 697893473}
 --- !u!4 &1947009119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 452560, guid: 7e2e8028213a4834fa8f2991bdefe708,

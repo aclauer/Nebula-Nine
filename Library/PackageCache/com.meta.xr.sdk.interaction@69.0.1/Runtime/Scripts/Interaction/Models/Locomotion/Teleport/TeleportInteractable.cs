@@ -282,7 +282,7 @@ namespace Oculus.Interaction.Locomotion
                 return true;
             }
 
-            Debug.Log("Invalid teleport hit.\n");
+            //Debug.Log("Invalid teleport hit.\n");
             hit = TeleportHit.DEFAULT;
             return false;
         }

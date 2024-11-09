@@ -19,10 +19,23 @@ public class doorOpener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 position = player.transform.localPosition;
-        Debug.Log("Player position: " + position + " (" + position.magnitude + ")");
+        //Vector3 position = player.transform.localPosition;
 
-        if (position.magnitude < 3.0)
+        if (player == null)
+        {
+            Debug.Log("**Player is null**");
+        }
+
+        Debug.Log("Player: " + player);
+        Debug.Log("Player transform: " + player.transform);
+
+        Debug.Log("Player position: " + player.transform.position);
+        Debug.Log("Door position: " + transform.position);
+
+        Vector3 relativePosition = player.transform.position - transform.position;
+        Debug.Log("Relative position: " + relativePosition + " (" + relativePosition.magnitude + ")");
+
+        if (relativePosition.magnitude < 3.0)
         {
             animator.SetBool("character_nearby", true);
         } else
