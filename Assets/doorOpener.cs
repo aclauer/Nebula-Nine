@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class doorOpener : MonoBehaviour
 {
+    public GameObject player;
 
     Animator animator;
 
@@ -18,7 +19,15 @@ public class doorOpener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("character_nearby", true);
-        
+        Vector3 position = player.transform.localPosition;
+        Debug.Log("Player position: " + position + " (" + position.magnitude + ")");
+
+        if (position.magnitude < 3.0)
+        {
+            animator.SetBool("character_nearby", true);
+        } else
+        {
+            animator.SetBool("character_nearby", false);
+        }  
     }
 }
