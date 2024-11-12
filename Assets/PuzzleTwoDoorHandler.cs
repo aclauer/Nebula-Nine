@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class doorOpener : MonoBehaviour
+public class PuzzleTwoDoorHandler : MonoBehaviour
 {
     public GameObject player;
 

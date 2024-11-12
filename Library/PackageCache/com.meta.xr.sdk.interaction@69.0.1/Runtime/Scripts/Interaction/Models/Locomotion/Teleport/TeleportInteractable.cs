@@ -243,46 +243,15 @@ namespace Oculus.Interaction.Locomotion
         /// </summary>
         public bool DetectHit(Vector3 from, Vector3 to, out TeleportHit hit)
         {
-
-            //Console.Debug("Trying to detect a hit.\n");
-
-            //Vector3 dir = to - from;
-            //Ray ray = new Ray(from, dir);
-
-            //if (Physics.Raycast(ray, out RaycastHit rayHit, dir.magnitude))
-            //{
-            //    if (rayHit.collider.CompareTag("Door"))
-            //    {
-            //        Console.Debug("Teleportation detected a door.\n");
-            //        _allowTeleport = false;
-            //        hit = TeleportHit.DEFAULT;
-            //        return false;
-            //    }
-            //}
-
-            //if (Surface.Raycast(ray, out SurfaceHit surfaceHit, dir.magnitude))
-            //{
-            //    Console.Debug("This should be a valid teleportation.\n");
-            //    hit = new TeleportHit(this.transform, surfaceHit.Point, surfaceHit.Normal,
-            //        _equalDistanceToBlockerOverride);
-            //    return true;
-            //}
-
-            //Console.Debug("This is the default case.\n");
-            //hit = TeleportHit.DEFAULT;
-            //return false;
-
             Vector3 dir = to - from;
             Ray ray = new Ray(from, dir);
             if (Surface.Raycast(ray, out SurfaceHit surfaceHit, dir.magnitude))
             {
-                Debug.Log("Valid teleport hit.\n");              
                 hit = new TeleportHit(this.transform, surfaceHit.Point, surfaceHit.Normal,
                     _equalDistanceToBlockerOverride);
                 return true;
             }
 
-            //Debug.Log("Invalid teleport hit.\n");
             hit = TeleportHit.DEFAULT;
             return false;
         }
