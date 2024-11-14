@@ -4,27 +4,23 @@ using UnityEngine;
 
 public class PuzzleThreeDoorHandler : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject club;
 
-    Animator animator;
+    private bool puzzleActive = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 relativePosition = player.transform.position - transform.position;
+        club.SetActive(puzzleActive);
+    }
 
-        if (relativePosition.magnitude < 3.0)
-        {
-            animator.SetBool("character_nearby", true);
-        } else
-        {
-            animator.SetBool("character_nearby", false);
-        }  
+    public void setPuzzleStatus(bool status) {
+        puzzleActive = status;
     }
 }
