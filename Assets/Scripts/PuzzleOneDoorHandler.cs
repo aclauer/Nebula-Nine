@@ -24,6 +24,5 @@ public class DoorOneHandler : MonoBehaviour
     {
         Debug.Log("Callee function (door should be opening)");
         animator.SetBool("character_nearby", true);
-        //Debug.Log("Second log.");
     }
 }

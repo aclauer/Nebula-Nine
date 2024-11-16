@@ -9,11 +9,23 @@ TagManager:
   - GolfClub
   - GolfBall
   - GolfHole
+  - QDSUIToggleButton
+  - QDSUIIcon
+  - QDSUITextSecondaryColor
+  - QDSUIToggleBorderlessButton
+  - QDSUITooltip
+  - QDSUISecondaryButton
+  - QDSUISharedThemeColor
+  - QDSUIAccentColor
+  - QDSUIToggleSwitch
+  - QDSUIPrimaryButton
+  - QDSUIToggleCheckboxRadio
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Teleport Block
   - Water
   - UI
   - Interactive
