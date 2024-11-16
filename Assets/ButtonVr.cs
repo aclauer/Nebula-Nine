@@ -20,9 +20,10 @@ public class ButtonVr : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Button trigger enter");
         if (!isPressed)
         {
-            button.transform.localPosition = new Vector3(0, 0.003f, 0);
+            button.transform.localPosition += new Vector3(0, 0.003f, 0);
             presser = other.gameObject;
             onPress.Invoke();
             sound.Play();
@@ -32,9 +33,10 @@ public class ButtonVr : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Button trigger exit");
         if (other.gameObject == presser)
         {
-            button.transform.localPosition = new Vector3(0, 0.015f, 0);
+            button.transform.localPosition -= new Vector3(0, 0.003f, 0);
             onRelease.Invoke();
             isPressed = false;
         }

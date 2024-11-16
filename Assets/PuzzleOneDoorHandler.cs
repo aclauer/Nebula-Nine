@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DoorOneHandler : MonoBehaviour
 {
-    public GameObject doorButton;
-
-    Animator animator;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
+        //animator = gameObject.GetComponent<Animator>();
+        //Debug.Log("Opening the door on start");
+        //animator.SetBool("character_nearby", true);
     }
 
     // Update is called once per frame
@@ -22,7 +22,8 @@ public class DoorOneHandler : MonoBehaviour
 
     public void OnButtonSelected()
     {
-        Debug.Log("We have pressed the button.");
-        animator.SetBool("player_nearby", true);
+        Debug.Log("Callee function (door should be opening)");
+        animator.SetBool("character_nearby", true);
+        //Debug.Log("Second log.");
     }
 }
