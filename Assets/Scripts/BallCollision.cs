@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class BallCollision : MonoBehaviour
 {
-
     public GameObject ball;
+    public GameObject fireworks; // Reference to the fireworks GameObject
 
     private const float SPEED_FACTOR = 1.5f;
     private const float SPIN_FACTOR = 0.2f;
 
     private AudioSource ballSound;
-    
 
     // Start is called before the first frame update
     void Start()
     {
         ballSound = GetComponent<AudioSource>();
+        if (fireworks != null)
+        {
+            fireworks.SetActive(false); // Ensure fireworks are initially inactive
+        }
     }
 
     // Update is called once per frame
@@ -30,8 +33,6 @@ public class BallCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GolfClub"))
         {
-            // TODO: Enforce minimum time between strokes
-
             Debug.Log("Detected a golf ball collision");
 
             Rigidbody ballRigidBody = GetComponent<Rigidbody>();
@@ -58,6 +59,14 @@ public class BallCollision : MonoBehaviour
         if (other.gameObject.CompareTag("GolfHole"))
         {
             Debug.Log("Ball is in the hole!");
+
+            // Activate fireworks
+            if (fireworks != null)
+            {
+                fireworks.SetActive(true); // Activate the fireworks GameObject
+            }
+
+            // Disable the ball and play sound
             ball.SetActive(false);
             ballSound.Play();
         }
