@@ -7,6 +7,8 @@ TagManager:
   - Door
   - TrackingObject
   - GolfClub
+  - GolfBall
+  - GolfHole
   layers:
   - Default
   - TransparentFX

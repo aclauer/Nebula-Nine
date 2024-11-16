@@ -3326,7 +3326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 434982, guid: 6812e31ceb91fc04da03973c6b1054cd,
+        type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 649700286}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6812e31ceb91fc04da03973c6b1054cd, type: 3}
 --- !u!4 &149733242 stripped
@@ -11560,6 +11564,117 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1337591285}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &649700285
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 149733242}
+    m_Modifications:
+    - target: {fileID: 924962255085458261, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_TagString
+      value: GolfHole
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.35708237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.322
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.005115509
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755975711649931084, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_Name
+      value: GolfHole
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755975711649931084, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5755975711649931084, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 649700288}
+  m_SourcePrefab: {fileID: 100100000, guid: 4a1050d66347e4dc8b632f9d71dd449b, type: 3}
+--- !u!4 &649700286 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4930755778773782548, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+    type: 3}
+  m_PrefabInstance: {fileID: 649700285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &649700287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5755975711649931084, guid: 4a1050d66347e4dc8b632f9d71dd449b,
+    type: 3}
+  m_PrefabInstance: {fileID: 649700285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &649700288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649700287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e2f60e50d0d40f3b0c82978c3c9734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &651097622
 GameObject:
   m_ObjectHideFlags: 0
@@ -27736,6 +27851,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moon Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_TagString
+      value: GolfBall
+      objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -27750,7 +27869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.69
+      value: -26.63
       objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27758,7 +27877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.045485
+      value: 15.87
       objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27813,6 +27932,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13400000, guid: 6bad65ea7c0dc4235a10a682baa85264,
         type: 2}
+    - target: {fileID: 6353123651212667173, guid: f9a741bb8762344c6a2a9cb4217ef728,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27879,6 +28003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1880bfd24bab4829a716f96244d592c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 1614322022}
 --- !u!96 &1614322033
 TrailRenderer:
   serializedVersion: 3

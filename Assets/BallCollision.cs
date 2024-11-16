@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class BallCollision : MonoBehaviour
 {
-    const float SPEED_FACTOR = 2f;
-    const float SPIN_FACTOR = 0.2f;
 
-    AudioSource ballSound;
+    public GameObject ball;
+
+    private const float SPEED_FACTOR = 1f;
+    private const float SPIN_FACTOR = 0.2f;
+
+    private AudioSource ballSound;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +26,9 @@ public class BallCollision : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collider)
+    void OnCollisionEnter(Collision other)
     {
-        if (collider.gameObject.CompareTag("GolfClub"))
+        if (other.gameObject.CompareTag("GolfClub"))
         {
             // TODO: Enforce minimum time between strokes
 
@@ -32,10 +36,10 @@ public class BallCollision : MonoBehaviour
 
             Rigidbody ballRigidBody = GetComponent<Rigidbody>();
 
-            float clubSpeed = collider.relativeVelocity.magnitude;
+            float clubSpeed = other.relativeVelocity.magnitude;
             float forceMagnitude = clubSpeed * SPEED_FACTOR;
 
-            Vector3 forceDir = collider.contacts[0].normal;
+            Vector3 forceDir = other.contacts[0].normal;
 
             ballRigidBody.AddForce(-forceDir * forceMagnitude, ForceMode.Impulse);
 
@@ -47,5 +51,15 @@ public class BallCollision : MonoBehaviour
 
         // Play sound for all collisions
         ballSound.Play();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("GolfHole"))
+        {
+            Debug.Log("Ball is in the hole!");
+            ball.SetActive(false);
+            ballSound.Play();
+        }
     }
 }
