@@ -20,7 +20,7 @@ public class ProximityDoorOpener : MonoBehaviour
     {
         Vector3 relativePosition = player.transform.position - transform.position;
 
-        if (relativePosition.magnitude < 3.0)
+        if (relativePosition.magnitude < 5.0)
         {
             animator.SetBool("character_nearby", true);
         } else
