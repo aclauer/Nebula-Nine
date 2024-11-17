@@ -67,8 +67,9 @@ public class BallCollision : MonoBehaviour
             }
 
             // Disable the ball and play sound
-            ball.SetActive(false);
             ballSound.Play();
+            ball.SetActive(false);
+            
         }
     }
 }

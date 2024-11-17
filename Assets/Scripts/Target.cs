@@ -5,10 +5,12 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public GameObject cube;
+
+    public AudioSource audioSource;
     
     void Start()
     {
-
+        // audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,6 +29,7 @@ public class Target : MonoBehaviour
     void Explode()
     {
         gameObject.SetActive(false);
+        audioSource.Play();
     }
 }
 
