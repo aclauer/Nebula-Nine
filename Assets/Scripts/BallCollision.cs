@@ -7,6 +7,7 @@ public class BallCollision : MonoBehaviour
 {
     public GameObject ball;
     public GameObject fireworks; // Reference to the fireworks GameObject
+    public GameObject HUD;
 
     private const float SPEED_FACTOR = 1.5f;
     private const float SPIN_FACTOR = 0.2f;
@@ -65,6 +66,9 @@ public class BallCollision : MonoBehaviour
             {
                 fireworks.SetActive(true); // Activate the fireworks GameObject
             }
+            var hudScript = HUD.GetComponent<HUDScript>();
+            hudScript.victory = 1;
+
 
             // Disable the ball and play sound
             ballSound.Play();

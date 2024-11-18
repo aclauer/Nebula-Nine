@@ -17,7 +17,6 @@ public class TargetSpawner : MonoBehaviour
 
     void Update()
     {
-
     }
 
     public void SpawnTargets()
