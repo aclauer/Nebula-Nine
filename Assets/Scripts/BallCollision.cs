@@ -8,7 +8,7 @@ public class BallCollision : MonoBehaviour
     public GameObject ball;
     public GameObject club;
 
-    private const float SPEED_FACTOR = 1.0f;
+    private const float SPEED_FACTOR = 1.5f;
     private const float SPIN_FACTOR = 0.2f;
 
     private AudioSource ballSound;
