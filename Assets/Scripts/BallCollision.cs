@@ -8,6 +8,8 @@ public class BallCollision : MonoBehaviour
     public GameObject ball;
     public GameObject club;
 
+    public GameObject door;
+
     private const float SPEED_FACTOR = 0.1f;
     private const float SPIN_FACTOR = 0.0f;
     private const float MAX_CLUB_SPEED = 0.4f;
@@ -77,12 +79,22 @@ public class BallCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GolfHole"))
         {
-            Debug.Log("Ball is in the hole!");
+            Debug.Log("Ball is in the hole (" + getStrokeCount() + " strokes) . Should be opening the door.");
+
+            Animator doorAnimator = door.GetComponent<Animator>();
+
+            if (doorAnimator == null)
+            {
+                Debug.Log("** ANIMATOR IS NULL **");
+            } else
+            {
+                // TODO: Change boolean name to "HoleComplete"
+                doorAnimator.SetBool("character_nearby", true);                
+            }
 
             // Disable the ball and play sound
             ballSound.Play();
             ball.SetActive(false);
-            
         }
     }
 
