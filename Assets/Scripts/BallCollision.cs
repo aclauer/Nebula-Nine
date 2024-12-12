@@ -43,7 +43,6 @@ public class BallCollision : MonoBehaviour
             Debug.Log("Detected a golf ball collision");
 
             Rigidbody ballRigidBody = GetComponent<Rigidbody>();
-
             float clubSpeed = other.relativeVelocity.magnitude;
             float forceMagnitude = clubSpeed * SPEED_FACTOR;
 
