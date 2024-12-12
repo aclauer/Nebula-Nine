@@ -18,6 +18,8 @@ public class BallCollision : MonoBehaviour
     private const float HIT_DELAY = 1.0f;
     private float nextHitTime = 0.0f;
 
+    private int strokeCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +43,9 @@ public class BallCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GolfClub") & clubActive)
         {
-            Debug.Log("Detected a golf ball collision");
-
+            strokeCount++;
+            Debug.Log("Detected a golf ball collision: Current stroke count: " + getStrokeCount());
+            
             Rigidbody ballRigidBody = GetComponent<Rigidbody>();
             float clubSpeed = Math.Max(other.relativeVelocity.magnitude, MAX_CLUB_SPEED);
             float forceMagnitude = clubSpeed * SPEED_FACTOR;
@@ -81,5 +84,10 @@ public class BallCollision : MonoBehaviour
             ball.SetActive(false);
             
         }
+    }
+
+    public int getStrokeCount()
+    {
+        return strokeCount;
     }
 }
