@@ -8,8 +8,9 @@ public class BallCollision : MonoBehaviour
     public GameObject ball;
     public GameObject club;
 
-    private const float SPEED_FACTOR = 1.5f;
-    private const float SPIN_FACTOR = 0.2f;
+    private const float SPEED_FACTOR = 0.1f;
+    private const float SPIN_FACTOR = 0.0f;
+    private const float MAX_CLUB_SPEED = 0.4f;
 
     private AudioSource ballSound;
 
@@ -43,12 +44,12 @@ public class BallCollision : MonoBehaviour
             Debug.Log("Detected a golf ball collision");
 
             Rigidbody ballRigidBody = GetComponent<Rigidbody>();
-            float clubSpeed = other.relativeVelocity.magnitude;
+            float clubSpeed = Math.Max(other.relativeVelocity.magnitude, MAX_CLUB_SPEED);
             float forceMagnitude = clubSpeed * SPEED_FACTOR;
 
             Vector3 forceDir = other.contacts[0].normal;
 
-            ballRigidBody.AddForce(-forceDir * forceMagnitude, ForceMode.Impulse);
+            ballRigidBody.AddForce(forceDir * forceMagnitude, ForceMode.Impulse);
 
             Vector3 spinDir = Vector3.Cross(forceDir, Vector3.up);
             float spinMagnitude = clubSpeed * SPIN_FACTOR;
