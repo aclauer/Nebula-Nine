@@ -37085,8 +37085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1614322022}
-  fireworks: {fileID: 795185763}
-  HUD: {fileID: 1255016153}
+  club: {fileID: 2028464526}
 --- !u!96 &1614322033
 TrailRenderer:
   serializedVersion: 3
