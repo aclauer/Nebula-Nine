@@ -16,6 +16,8 @@ public class BallCollision : MonoBehaviour
 
     private AudioSource ballSound;
 
+    public AudioSource doorOpenSound = null;
+
     private bool clubActive = true;
     private const float HIT_DELAY = 1.0f;
     private float nextHitTime = 0.0f;
@@ -89,7 +91,8 @@ public class BallCollision : MonoBehaviour
             } else
             {
                 // TODO: Change boolean name to "HoleComplete"
-                doorAnimator.SetBool("character_nearby", true);                
+                doorAnimator.SetBool("character_nearby", true); 
+                doorOpenSound.Play();               
             }
 
             // Disable the ball and play sound
