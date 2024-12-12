@@ -83,6 +83,7 @@ public class BallCollision : MonoBehaviour
             ballSound.Play();
             ball.SetActive(false);
             
+            
         }
     }
 
