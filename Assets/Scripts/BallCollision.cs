@@ -6,38 +6,43 @@ using UnityEngine;
 public class BallCollision : MonoBehaviour
 {
     public GameObject ball;
-    public GameObject fireworks; // Reference to the fireworks GameObject
-    public GameObject HUD;
+    public GameObject club;
 
-    private const float SPEED_FACTOR = 1.5f;
+    private const float SPEED_FACTOR = 1.0f;
     private const float SPIN_FACTOR = 0.2f;
 
     private AudioSource ballSound;
+
+    private bool clubActive = true;
+    private const float HIT_DELAY = 1.0f;
+    private float nextHitTime = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         ballSound = GetComponent<AudioSource>();
-        if (fireworks != null)
-        {
-            fireworks.SetActive(false); // Ensure fireworks are initially inactive
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.time >= nextHitTime)
+        {
+            clubActive = true;
+            Collider[] colliders = club.GetComponents<Collider>();
+            foreach (Collider c in colliders) {
+                c.enabled = true;
+            }
+        }
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("GolfClub"))
+        if (other.gameObject.CompareTag("GolfClub") & clubActive)
         {
             Debug.Log("Detected a golf ball collision");
 
             Rigidbody ballRigidBody = GetComponent<Rigidbody>();
-
             float clubSpeed = other.relativeVelocity.magnitude;
             float forceMagnitude = clubSpeed * SPEED_FACTOR;
 
@@ -49,10 +54,19 @@ public class BallCollision : MonoBehaviour
             float spinMagnitude = clubSpeed * SPIN_FACTOR;
 
             ballRigidBody.AddTorque(spinDir * spinMagnitude, ForceMode.Impulse);
+
+            clubActive = false;
+            nextHitTime = Time.time + HIT_DELAY;
+            
+            Collider[] colliders = club.GetComponents<Collider>();
+            foreach (Collider c in colliders) {
+                c.enabled = false;
+            }
         }
 
         // Play sound for all collisions
         ballSound.Play();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -60,15 +74,6 @@ public class BallCollision : MonoBehaviour
         if (other.gameObject.CompareTag("GolfHole"))
         {
             Debug.Log("Ball is in the hole!");
-
-            // Activate fireworks
-            if (fireworks != null)
-            {
-                fireworks.SetActive(true); // Activate the fireworks GameObject
-            }
-            var hudScript = HUD.GetComponent<HUDScript>();
-            hudScript.victory = 1;
-
 
             // Disable the ball and play sound
             ballSound.Play();

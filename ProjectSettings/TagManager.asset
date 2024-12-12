@@ -21,6 +21,7 @@ TagManager:
   - QDSUIPrimaryButton
   - QDSUIToggleCheckboxRadio
   - SamplesInfoPanel
+  - TeleportBlocker
   layers:
   - Default
   - TransparentFX
