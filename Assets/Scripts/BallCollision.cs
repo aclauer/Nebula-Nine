@@ -82,17 +82,21 @@ public class BallCollision : MonoBehaviour
         {
             Debug.Log(ball + " is in the hole (" + getStrokeCount() + " strokes)");
 
-            Animator doorAnimator = door.GetComponent<Animator>();
-
-            if (doorAnimator == null)
+            // Door could be null, like on hole 5
+            if (door != null)
             {
-                Debug.Log("Warning: Animator for " + ball + " is null.");
-            } else
-            {
-                // TODO: Change boolean name to "HoleComplete"
-                doorAnimator.SetBool("character_nearby", true); 
-                doorOpenSound.Play();
-                Debug.Log("Info: Door has been opened.");
+                Animator doorAnimator = door.GetComponent<Animator>();
+                if (doorAnimator == null)
+                {
+                    Debug.Log("Warning: Animator for " + ball + " is null.");
+                }
+                else
+                {
+                    // TODO: Change boolean name to "HoleComplete"
+                    doorAnimator.SetBool("Open", true);
+                    doorOpenSound.Play();
+                    Debug.Log("Info: Door has been opened.");
+                }
             }
 
             // Disable the ball and play sound
