@@ -7686,7 +7686,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.033333335
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 00aa337e918b64373b1e622a38e6e42c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7b29dac938eb84559bf3e7fdc77b7ac5, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &292094793
 GameObject:
@@ -9918,7 +9918,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 126730, guid: f18932879bb23b84ca5370b65419ee41, type: 3}
       propertyPath: m_Name
-      value: Corridor_1
+      value: '!Corridor_with_nav_mesh'
+      objectReference: {fileID: 0}
+    - target: {fileID: 193114, guid: f18932879bb23b84ca5370b65419ee41, type: 3}
+      propertyPath: m_Name
+      value: '!floor_with_nav_mesh'
       objectReference: {fileID: 0}
     - target: {fileID: 498868, guid: f18932879bb23b84ca5370b65419ee41, type: 3}
       propertyPath: m_LocalScale.x
@@ -10532,6 +10536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 506438102}
+  playerCamera: {fileID: 1262215212}
 --- !u!65 &399799353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10612,7 +10617,7 @@ Transform:
   m_GameObject: {fileID: 399799351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.09, y: 23.32, z: -21.7}
+  m_LocalPosition: {x: 25.62, y: 23.32, z: -21.7}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -21984,6 +21989,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1052726883}
   - {fileID: 1946342499}
   - {fileID: 802264621}
   - {fileID: 1300514671}
@@ -22026,7 +22032,6 @@ Transform:
   - {fileID: 1318185370}
   - {fileID: 1947009119}
   - {fileID: 1738395752}
-  - {fileID: 1052726883}
   - {fileID: 2133303917}
   - {fileID: 1202947948}
   - {fileID: 357529577}
@@ -30022,7 +30027,7 @@ GameObject:
   - component: {fileID: 1262215213}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
