@@ -20,7 +20,7 @@ public class BallCollision : MonoBehaviour
     public AudioSource doorOpenSound = null;
 
     private bool clubActive = true;
-    private const float HIT_DELAY = 1.0f;
+    private const float HIT_DELAY = 2.0f;
     private float nextHitTime = 0.0f;
 
     private int strokeCount = 0;
@@ -73,6 +73,8 @@ public class BallCollision : MonoBehaviour
             foreach (Collider c in colliders) {
                 c.enabled = false;
             }
+            ballSound.Play();
+
         }
 
         // Play sound for all collisions
@@ -95,14 +97,11 @@ public class BallCollision : MonoBehaviour
                 }
                 else
                 {
-                    // TODO: Change boolean name to "HoleComplete"
                     doorAnimator.SetBool("Open", true);
                     doorOpenSound.Play();
                     Debug.Log("Info: Door has been opened.");
                 }
             }
-
-            gameManager.UpdateStrokeCount();
 
             // Disable the ball and play sound
             if (ballSound != null)
