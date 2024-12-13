@@ -9,6 +9,7 @@ public class ScreenCounterDisplay : MonoBehaviour
     public GameObject ball3;
     public GameObject ball4;
     public GameObject ball5;
+
     public
 
     void Update()
