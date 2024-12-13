@@ -102,8 +102,6 @@ public class BallCollision : MonoBehaviour
                 }
             }
 
-            gameManager.UpdateStrokeCount();
-
             // Disable the ball and play sound
             if (ballSound != null)
             {
