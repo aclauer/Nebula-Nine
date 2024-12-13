@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BallCollision : MonoBehaviour
 {
+    public GameManager gameManager; // Reference to the GameManager script
     public GameObject ball;
     public GameObject club;
 
@@ -49,6 +50,8 @@ public class BallCollision : MonoBehaviour
         {
             strokeCount++;
             Debug.Log("Info: Detected collision with " + ball + "(current stroke count: " + getStrokeCount() + ")");
+
+            gameManager.UpdateStrokeCount();
             
             Rigidbody ballRigidBody = GetComponent<Rigidbody>();
             float clubSpeed = Math.Max(other.relativeVelocity.magnitude, MAX_CLUB_SPEED);
@@ -98,6 +101,8 @@ public class BallCollision : MonoBehaviour
                     Debug.Log("Info: Door has been opened.");
                 }
             }
+
+            gameManager.UpdateStrokeCount();
 
             // Disable the ball and play sound
             if (ballSound != null)
