@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ContinuousRotation : MonoBehaviour
 {
-    public float rotationSpeed = 5f;  // Adjust rotation speed
+    public float rotationSpeed = -5f;  // Adjust rotation speed
 
     void Update()
     {
