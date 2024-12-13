@@ -42635,6 +42635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corridor_X (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 447630, guid: d17bc9c1cdef1c5448255edad31c1c61, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 462610, guid: d17bc9c1cdef1c5448255edad31c1c61, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
