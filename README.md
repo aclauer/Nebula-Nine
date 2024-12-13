@@ -2,7 +2,7 @@
 
 VR golf escape room for COMP 790 VR Game Development.
 
-Watch a video demo [here](https://youtu.be/HYhDjTYH7Gk).
+Watch a video demo [here](https://youtube.com/shorts/g-Aha1MsgE4).
 
 Locomotion is done with 6 DOF head tracking and teleportation using controller joystick. Players can interact with various game objects using the golf club tracked to the users controller.
 
