@@ -48,7 +48,7 @@ public class BallCollision : MonoBehaviour
         if (other.gameObject.CompareTag("GolfClub") & clubActive)
         {
             strokeCount++;
-            Debug.Log("Detected a golf ball collision: Current stroke count: " + getStrokeCount());
+            Debug.Log("Info: Detected collision with " + ball + "(current stroke count: " + getStrokeCount() + ")");
             
             Rigidbody ballRigidBody = GetComponent<Rigidbody>();
             float clubSpeed = Math.Max(other.relativeVelocity.magnitude, MAX_CLUB_SPEED);
@@ -74,30 +74,45 @@ public class BallCollision : MonoBehaviour
 
         // Play sound for all collisions
         ballSound.Play();
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("GolfHole"))
         {
-            Debug.Log("Ball is in the hole (" + getStrokeCount() + " strokes) . Should be opening the door.");
+            Debug.Log(ball + " is in the hole (" + getStrokeCount() + " strokes)");
 
             Animator doorAnimator = door.GetComponent<Animator>();
 
             if (doorAnimator == null)
             {
-                Debug.Log("** ANIMATOR IS NULL **");
+                Debug.Log("Warning: Animator for " + ball + " is null.");
             } else
             {
                 // TODO: Change boolean name to "HoleComplete"
                 doorAnimator.SetBool("character_nearby", true); 
-                doorOpenSound.Play();               
+                doorOpenSound.Play();
+                Debug.Log("Info: Door has been opened.");
             }
 
             // Disable the ball and play sound
-            ballSound.Play();
-            ball.SetActive(false);
+            if (ballSound != null)
+            {
+                ballSound.Play();
+            } else
+            {
+                Debug.Log("Warning: ballSound for " + ball + " is null.");
+            }
+            
+            if (ball == null)
+            {
+                Debug.Log("Warning: " + ball + " is a null object!");
+            } else
+            {
+           
+                ball.SetActive(false);
+                Debug.Log("Info: " + ball + " SetActive to false");
+            }
         }
     }
 
