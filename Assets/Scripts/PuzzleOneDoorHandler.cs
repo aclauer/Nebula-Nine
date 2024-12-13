@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorOneHandler : MonoBehaviour
 {
     public Animator animator;
+    public AudioSource doorOpenSound = null;
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +25,7 @@ public class DoorOneHandler : MonoBehaviour
     {
         Debug.Log("Callee function (door should be opening)");
         animator.SetBool("character_nearby", true);
+        doorOpenSound.Play(); 
+        
     }
 }
